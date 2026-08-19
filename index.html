@@ -1,434 +1,444 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biafrana Comércio Geral - Peças Genuínas de Automóveis em Luanda</title>
-    <!-- Fontes Google -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Biafrana Comércio Geral — Peças e Componentes Genuínos</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --azul-profundo: #0B2545;
-            --azul-escuro-bg: #07192E;
-            --dourado: #D4AF37;
-            --dourado-hover: #B59226;
-            --cinza-antracite: #1F2421;
-            --cinza-card: #161B22;
-            --cinza-borda: #2D3748;
-            --cinza-texto: #A0AEC0;
-            --branco: #FFFFFF;
-            --verde-whatsapp: #25D366;
-            --fonte-principal: 'Plus Jakarta Sans', sans-serif;
+            /* Palette Dark Automotive Luxury */
+            --surface-ground: #06090F;
+            --surface-canvas: #0B0F19;
+            --surface-card: #121824;
+            --surface-card-hover: #182030;
+            --surface-glass: rgba(18, 24, 36, 0.72);
+            --surface-glass-border: rgba(212, 175, 55, 0.15);
+            
+            --gold-primary: #D4AF37;
+            --gold-secondary: #AA820A;
+            --gold-light: #F3E5AD;
+            --gold-gradient: linear-gradient(135deg, #F3E5AD 0%, #D4AF37 45%, #AA820A 100%);
+            --gold-glow: rgba(212, 175, 55, 0.18);
+            
+            --blue-accent: #0284C7;
+            --blue-glow: rgba(2, 132, 199, 0.2);
+            
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-tertiary: #64748B;
+            --border-subtle: rgba(255, 255, 255, 0.07);
+            --border-highlight: rgba(212, 175, 55, 0.3);
+            
+            --whatsapp-green: #10B981;
+            --whatsapp-glow: rgba(16, 185, 129, 0.25);
+            
+            --font-head: 'Syne', -apple-system, sans-serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            
+            --header-height: 72px;
+            --bottom-nav-height: 64px;
+            
+            --radius-xs: 6px;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            
+            --shadow-elevation-1: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+            --shadow-elevation-2: 0 12px 32px -4px rgba(0, 0, 0, 0.7);
+            --shadow-gold-glow: 0 0 25px rgba(212, 175, 55, 0.2);
+            
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
+        [data-theme="light"] {
+            --surface-ground: #E2E8F0;
+            --surface-canvas: #F8FAFC;
+            --surface-card: #FFFFFF;
+            --surface-card-hover: #F1F5F9;
+            --surface-glass: rgba(255, 255, 255, 0.82);
+            --surface-glass-border: rgba(181, 138, 21, 0.25);
+            
+            --gold-primary: #B58A15;
+            --gold-secondary: #8C6A0E;
+            --gold-light: #D1AB38;
+            --gold-gradient: linear-gradient(135deg, #D1AB38 0%, #B58A15 100%);
+            
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-tertiary: #94A3B8;
+            --border-subtle: rgba(0, 0, 0, 0.08);
+            --shadow-elevation-1: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+            --shadow-elevation-2: 0 12px 32px -4px rgba(0, 0, 0, 0.12);
+        }
+
+        *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: var(--fonte-principal);
-            background-color: var(--cinza-antracite);
-            color: var(--branco);
+            font-family: var(--font-body);
+            background-color: var(--surface-ground);
+            color: var(--text-primary);
             line-height: 1.5;
+            padding-bottom: calc(var(--bottom-nav-height) + 32px);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Top Bar de Informações Institucionais */
-        .top-bar {
-            background-color: #051322;
-            padding: 0.5rem 2rem;
-            font-size: 0.82rem;
-            color: var(--cinza-texto);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .top-bar-container {
-            max-width: 1280px;
-            margin: 0 auto;
+        /* Top Compliance Banner */
+        .compliance-bar {
+            background: #030508;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-subtle);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .compliance-badge {
+            color: var(--gold-primary);
+            font-weight: 700;
+            background: rgba(212, 175, 55, 0.08);
+            padding: 2px 8px;
+            border-radius: var(--radius-xs);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .top-info {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .top-info span {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .nif-badge {
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--dourado);
-            padding: 0.1rem 0.5rem;
-            border-radius: 3px;
-            font-weight: 600;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        /* Header e Navegação */
+        /* Sticky Glass Header */
         header {
-            background-color: var(--azul-profundo);
-            padding: 1rem 2rem;
+            background: var(--surface-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            height: var(--header-height);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 2px solid var(--dourado);
+            border-bottom: 1px solid var(--surface-glass-border);
+            display: flex;
+            align-items: center;
         }
 
-        nav {
-            max-width: 1280px;
+        .header-inner {
+            width: 100%;
+            max-width: 1320px;
             margin: 0 auto;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .brand-container {
+        .brand-link {
+            text-decoration: none;
             display: flex;
             flex-direction: column;
         }
-
-        .logo {
-            font-size: 1.6rem;
-            color: var(--dourado);
-            text-decoration: none;
+        .brand-title {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: 0.5px;
+            letter-spacing: -0.5px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        .brand-subtitle {
+            font-size: 0.6rem;
+            color: var(--text-tertiary);
+            letter-spacing: 2px;
             text-transform: uppercase;
-            line-height: 1.1;
-        }
-
-        .logo-subtitle {
-            font-size: 0.72rem;
-            color: #CBD5E0;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.8rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 0.92rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--dourado);
-        }
-
-        .btn-header-wa {
-            background-color: var(--verde-whatsapp);
-            color: var(--branco);
-            padding: 0.55rem 1.2rem;
-            border-radius: 4px;
-            text-decoration: none;
             font-weight: 700;
-            font-size: 0.85rem;
+            margin-top: 3px;
+        }
+
+        .header-controls {
             display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .action-icon-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s var(--ease-out-expo);
+        }
+        .action-icon-btn:hover {
+            border-color: var(--border-highlight);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .action-icon-btn:active {
+            transform: scale(0.94);
+        }
+
+        .badge-counter {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--gold-gradient);
+            color: #030508;
+            font-size: 0.65rem;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-gold-glow);
+        }
+
+        /* Hero Section Executivo */
+        .hero-viewport {
+            position: relative;
+            background: var(--surface-canvas);
+            padding: 3.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            overflow: hidden;
+        }
+        .hero-viewport::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 450px;
+            height: 450px;
+            background: var(--gold-glow);
+            filter: blur(140px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content-box {
+            max-width: 1320px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pill-tag {
+            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            transition: transform 0.2s, background-color 0.3s;
-        }
-
-        .btn-header-wa:hover {
-            background-color: #1eb956;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Banner */
-        .hero {
-            background: linear-gradient(135deg, rgba(7, 25, 46, 0.95) 0%, rgba(11, 37, 69, 0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80') center/cover;
-            padding: 4.5rem 2rem;
-            border-bottom: 1px solid var(--cinza-borda);
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-content {
-            max-width: 650px;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--dourado);
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
+            background: rgba(212, 175, 55, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.72rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold-primary);
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
         }
 
-        .hero-content h1 {
-            font-size: 2.8rem;
+        .hero-title {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
-            color: var(--branco);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+        .hero-title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero-content h1 span {
-            color: var(--dourado);
+        .hero-description {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
 
-        .hero-content p {
-            font-size: 1.05rem;
-            color: var(--cinza-texto);
+        .hero-actions-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Botões de Alta Definição */
+        .btn-primary-gold {
+            background: var(--gold-gradient);
+            color: #030508;
+            font-weight: 800;
+            border: none;
+            padding: 0.95rem 1.8rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: var(--shadow-gold-glow);
+            cursor: pointer;
+            transition: all 0.25s var(--ease-out-expo);
+        }
+        .btn-primary-gold:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.08);
+        }
+        .btn-primary-gold:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary-glass {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            font-weight: 700;
+            padding: 0.95rem 1.6rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: all 0.25s var(--ease-out-expo);
+        }
+        .btn-secondary-glass:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Marcas SUV / Pickup Direct Access */
+        .brands-bar {
+            background: var(--surface-canvas);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.25rem 0;
+        }
+        .brands-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 0.85rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .brands-container::-webkit-scrollbar { display: none; }
+        .brand-chip {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            transition: all 0.2s var(--ease-out-expo);
+        }
+        .brand-chip:hover {
+            border-color: var(--gold-primary);
+            color: var(--text-primary);
+        }
+
+        /* Módulo do Catálogo & Filtros Avançados */
+        .catalog-section {
+            max-width: 1320px;
+            margin: 2.5rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .filter-toolbar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
             margin-bottom: 2rem;
         }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        @media (min-width: 768px) {
+            .filter-toolbar {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
 
-        .btn-dourado {
-            background-color: var(--dourado);
-            color: var(--azul-escuro-bg);
-            padding: 0.85rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-block;
+        .search-field-wrap {
+            position: relative;
+            flex-grow: 1;
+            max-width: 500px;
+        }
+        .search-input {
+            width: 100%;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            padding: 0.95rem 1rem 0.95rem 3rem;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 0.92rem;
+            outline: none;
+            transition: all 0.25s var(--ease-out-expo);
+        }
+        .search-input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+        }
+        .search-icon-svg {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            fill: var(--text-tertiary);
         }
 
-        .btn-dourado:hover {
-            background-color: var(--dourado-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--dourado);
-            color: var(--dourado);
-            padding: 0.8rem 1.8rem;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--branco);
-        }
-
-        /* Banner de Marcas Automotivas Atendidas */
-        .brands-bar {
-            background-color: var(--azul-escuro-bg);
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--cinza-borda);
-        }
-
-        .brands-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .brands-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--dourado);
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
-        .brands-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .brand-badge {
-            background: #0E223B;
-            border: 1px solid var(--cinza-borda);
-            padding: 0.6rem 1.4rem;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--branco);
-            letter-spacing: 0.5px;
-            transition: border-color 0.3s;
-        }
-
-        .brand-badge:hover {
-            border-color: var(--dourado);
-            color: var(--dourado);
-        }
-
-        /* Layout Principal do Catálogo */
-        .main-layout {
-            max-width: 1280px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 2rem;
-        }
-
-        /* Filtros Inteligentes Lateral */
-        .filter-sidebar {
-            background-color: var(--cinza-card);
-            border: 1px solid var(--cinza-borda);
-            border-radius: 8px;
-            padding: 1.5rem;
-            height: fit-content;
-        }
-
-        .filter-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--dourado);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--cinza-borda);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .filter-group {
-            margin-bottom: 1.8rem;
-        }
-
-        .filter-group h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--branco);
-            margin-bottom: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .filter-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .filter-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.88rem;
-            color: var(--cinza-texto);
-            cursor: pointer;
-        }
-
-        .filter-item input[type="checkbox"] {
-            accent-color: var(--dourado);
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-        }
-
-        .filter-item:hover {
-            color: var(--dourado);
-        }
-
-        .price-range {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .price-inputs {
+        .categories-scroll {
             display: flex;
             gap: 0.5rem;
-            align-items: center;
+            overflow-x: auto;
+            scrollbar-width: none;
         }
+        .categories-scroll::-webkit-scrollbar { display: none; }
 
-        .price-inputs input {
-            width: 100%;
-            background: #0B0E14;
-            border: 1px solid var(--cinza-borda);
-            color: var(--branco);
-            padding: 0.4rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
+        .cat-btn {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s var(--ease-out-expo);
         }
-
-        /* Grid de Produtos */
-        .catalog-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .catalog-title h2 {
-            font-size: 1.6rem;
+        .cat-btn.active {
+            background: var(--gold-gradient);
+            color: #030508;
             font-weight: 800;
-            color: var(--branco);
+            border-color: transparent;
+            box-shadow: var(--shadow-gold-glow);
         }
 
-        .search-box {
-            position: relative;
-            width: 100%;
-            max-width: 320px;
-        }
-
-        .search-box input {
-            width: 100%;
-            background-color: var(--cinza-card);
-            border: 1px solid var(--cinza-borda);
-            padding: 0.6rem 1rem;
-            border-radius: 4px;
-            color: var(--branco);
-            font-size: 0.88rem;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--dourado);
-        }
-
+        /* Grid de Produtos Enterprise */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -436,481 +446,573 @@
         }
 
         .product-card {
-            background-color: var(--cinza-card);
-            border: 1px solid var(--cinza-borda);
-            border-radius: 8px;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
             overflow: hidden;
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             position: relative;
+            box-shadow: var(--shadow-elevation-1);
+            transition: all 0.3s var(--ease-out-expo);
         }
-
         .product-card:hover {
             transform: translateY(-4px);
-            border-color: var(--dourado);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border-color: var(--border-highlight);
+            box-shadow: var(--shadow-elevation-2);
         }
 
-        .product-badge {
+        .card-badge {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: var(--azul-profundo);
-            color: var(--dourado);
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 3px;
-            border: 1px solid var(--dourado);
+            top: 12px;
+            left: 12px;
+            background: rgba(3, 5, 8, 0.85);
+            backdrop-filter: blur(8px);
+            color: var(--gold-primary);
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-xs);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .product-image-wrap {
+        .card-media {
             width: 100%;
-            height: 200px;
-            background-color: #0D1117;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            aspect-ratio: 4/3;
+            background: #030508;
+            position: relative;
             overflow: hidden;
         }
-
-        .product-image {
+        .card-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .product-card:hover .card-img {
+            transform: scale(1.06);
         }
 
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 1.2rem;
+        .card-body {
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
-        .product-brand {
-            font-size: 0.75rem;
-            color: var(--dourado);
-            font-weight: 700;
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.4rem;
+        }
+        .card-brand {
+            font-size: 0.72rem;
+            color: var(--gold-primary);
+            font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 0.3rem;
+            letter-spacing: 0.8px;
+        }
+        .card-sku {
+            font-size: 0.68rem;
+            color: var(--text-tertiary);
+            font-family: monospace;
         }
 
-        .product-title {
-            font-size: 1rem;
+        .card-title {
+            font-size: 0.95rem;
             font-weight: 700;
-            color: var(--branco);
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
+            color: var(--text-primary);
+            line-height: 1.35;
+            margin-bottom: 0.85rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.7em;
         }
 
-        .product-desc {
-            font-size: 0.8rem;
-            color: var(--cinza-texto);
+        .card-price-row {
+            margin-top: auto;
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
             margin-bottom: 1rem;
         }
-
-        .product-bottom {
-            margin-top: auto;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        .price-label {
+            font-size: 0.65rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
         }
-
-        .product-price {
-            font-size: 1.25rem;
+        .price-value {
+            font-family: var(--font-head);
+            font-size: 1.15rem;
             font-weight: 800;
-            color: var(--branco);
-            margin-bottom: 0.8rem;
+            color: var(--text-primary);
         }
 
-        .btn-add-wa {
+        .btn-add-whatsapp {
             width: 100%;
-            background-color: var(--verde-whatsapp);
-            color: var(--branco);
-            padding: 0.65rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-decoration: none;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--whatsapp-green);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 0.75rem;
+            border-radius: var(--radius-sm);
+            font-weight: 800;
+            font-size: 0.82rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            transition: background 0.3s;
             cursor: pointer;
+            transition: all 0.2s var(--ease-out-expo);
+        }
+        .btn-add-whatsapp:hover {
+            background: var(--whatsapp-green);
+            color: #FFFFFF;
+            box-shadow: var(--whatsapp-glow);
         }
 
-        .btn-add-wa:hover {
-            background-color: #128C7E;
+        /* Drawers (Carrinho & Menu Mobile) */
+        .overlay-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 5, 8, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+        .overlay-backdrop.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        /* Seção Sobre / Garantia */
-        .about-section {
-            background-color: var(--azul-escuro-bg);
-            border-top: 1px solid var(--cinza-borda);
-            border-bottom: 1px solid var(--cinza-borda);
-            padding: 4rem 2rem;
-            margin-top: 4rem;
+        .side-drawer {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: -420px;
+            width: 100%;
+            max-width: 400px;
+            background: var(--surface-canvas);
+            z-index: 210;
+            transition: right 0.4s var(--ease-out-expo);
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-elevation-2);
+        }
+        .side-drawer.active {
+            right: 0;
         }
 
-        .about-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .drawer-head {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-
-        .about-card {
-            background: var(--cinza-card);
-            border: 1px solid var(--cinza-borda);
-            padding: 1.8rem;
-            border-radius: 8px;
-        }
-
-        .about-card h3 {
-            color: var(--dourado);
+        .drawer-title {
+            font-family: var(--font-head);
             font-size: 1.2rem;
-            margin-bottom: 0.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
         }
 
-        .about-card p {
-            color: var(--cinza-texto);
-            font-size: 0.9rem;
+        .drawer-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            overflow-y: auto;
         }
 
-        /* Rodapé Institucional */
-        footer {
-            background-color: #05101D;
-            color: var(--branco);
-            padding: 3.5rem 2rem 1.5rem;
-            border-top: 3px solid var(--dourado);
+        .drawer-foot {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--surface-card);
         }
 
-        .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .footer-col h4 {
-            color: var(--dourado);
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
-        .footer-col p, .footer-col a {
-            color: var(--cinza-texto);
-            text-decoration: none;
-            font-size: 0.88rem;
-            margin-bottom: 0.6rem;
-            display: block;
-        }
-
-        .footer-col a:hover {
-            color: var(--dourado);
-        }
-
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--cinza-borda);
+        .summary-row {
             display: flex;
             justify-content: space-between;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .summary-row.total {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        /* Bottom Fixed Bar (Mobile First Thumb-Zone) */
+        .bottom-nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: var(--bottom-nav-height);
+            background: var(--surface-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--surface-glass-border);
+            display: flex;
+            justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.82rem;
-            color: #718096;
+            z-index: 90;
         }
 
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-            .filter-sidebar {
-                display: none;
-            }
+        .nav-item-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            background: none;
+            border: none;
+            color: var(--text-tertiary);
+            font-size: 0.65rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .nav-item-btn.active {
+            color: var(--gold-primary);
+        }
+        .nav-item-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
         }
 
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .top-bar-container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        /* Toast UI Notification */
+        .toast-box {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-40px);
+            background: var(--surface-card);
+            border: 1px solid var(--border-highlight);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-elevation-2);
+            z-index: 300;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .toast-box.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Bar Institucional com Dados Oficiais de Luanda -->
-    <div class="top-bar">
-        <div class="top-bar-container">
-            <div class="top-info">
-                <span>📍 Rua Machado Saldanha, Bairro Neves Bendinha, Luanda - Angola</span>
-                <span>📞 +244 938 760 385 / 935 505 806</span>
-            </div>
-            <div class="top-info">
-                <span class="nif-badge">NIF: 5000738166 / 5000759058</span>
-                <span>LICENCIAMENTO: 2025-2027-AGT-400</span>
-            </div>
-        </div>
+    <!-- Notification System -->
+    <div id="toastNotification" class="toast-box">
+        <span style="color: var(--gold-primary);">✓</span> Item adicionado com sucesso
     </div>
 
-    <!-- Cabeçalho Principal -->
+    <!-- Top Compliance Bar -->
+    <div class="compliance-bar">
+        <div>📍 Luanda • Bairro Neves Bendinha</div>
+        <div>NIF: <span class="compliance-badge">5000738166</span></div>
+    </div>
+
+    <!-- Header Glass -->
     <header>
-        <nav>
-            <div class="brand-container">
-                <a href="#" class="logo">BIAFRANA</a>
-                <span class="logo-subtitle">Comércio Geral & Prestação de Serviços</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Início</a></li>
-                <li><a href="#catalogo">Peças Genuínas</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <a href="https://wa.me/244938760385?text=Olá%20Biafrana%20Comércio%20Geral,%20gostaria%20de%20consultar%20uma%20peça." target="_blank" class="btn-header-wa">
-                💬 WhatsApp Directo
+        <div class="header-inner">
+            <a href="#" class="brand-link">
+                <span class="brand-title">BIAFRANA</span>
+                <span class="brand-subtitle">Comércio & Peças Genuínas</span>
             </a>
-        </nav>
+
+            <div class="header-controls">
+                <button class="action-icon-btn" onclick="toggleTheme()" aria-label="Tema">
+                    <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+                </button>
+
+                <button class="action-icon-btn" onclick="toggleDrawer('cartDrawer')" aria-label="Carrinho">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <span id="cartCounter" class="badge-counter">0</span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-tag">Especialistas Automotivos em Luanda</span>
-                <h1>Venda de <span>Peças Genuínas</span> para Automóveis</h1>
-                <p>Componentes originais com garantia de desempenho para Toyota, Renault, Kia, Chevrolet, Mitsubishi, Ford, Suzuki e muito mais.</p>
-                <div class="hero-ctas">
-                    <a href="#catalogo" class="btn-dourado">Ver Catálogo de Peças</a>
-                    <a href="https://wa.me/244938760385?text=Gostaria%20de%20pedir%20uma%20Factura%20Proforma" target="_blank" class="btn-outline">Solicitar Proforma</a>
-                </div>
+    <!-- Hero Section Executiva -->
+    <section class="hero-viewport">
+        <div class="hero-content-box">
+            <div class="pill-tag">Certificação de Origem</div>
+            <h1 class="hero-title">Componentes Automotivos <span>Genuínos em Luanda</span></h1>
+            <p class="hero-description">Distribuição especializada de peças originais para frotas e veículos de alta exigência. Atendimento corporativo com emissão de factura proforma imediata.</p>
+            
+            <div class="hero-actions-group">
+                <a href="#catalogo" class="btn-primary-gold">Explorar Catálogo TÉCNICO</a>
+                <a href="https://wa.me/244938760385?text=Solicitar%20Factura%20Proforma" target="_blank" class="btn-secondary-glass">Solicitar Proforma</a>
             </div>
         </div>
     </section>
 
-    <!-- Marcas de Veículos Atendidas -->
-    <section class="brands-bar">
+    <!-- Bar de Marcas Homologadas -->
+    <div class="brands-bar">
         <div class="brands-container">
-            <div class="brands-title">Marcas Com Peças em Estoque Disponível</div>
-            <div class="brands-grid">
-                <div class="brand-badge">TOYOTA</div>
-                <div class="brand-badge">RENAULT</div>
-                <div class="brand-badge">KIA</div>
-                <div class="brand-badge">CHEVROLET</div>
-                <div class="brand-badge">MITSUBISHI</div>
-                <div class="brand-badge">FORD</div>
-                <div class="brand-badge">SUZUKI</div>
-            </div>
+            <span class="brand-chip">TOYOTA GENUINE</span>
+            <span class="brand-chip">MITSUBISHI MOTORS</span>
+            <span class="brand-chip">NISSAN GENUINE</span>
+            <span class="brand-chip">HYUNDAI MOBIS</span>
+            <span class="brand-chip">KIA GENUINE</span>
+            <span class="brand-chip">FORD MOTORcraft</span>
         </div>
-    </section>
-
-    <!-- Catálogo e Filtros Inteligentes -->
-    <div class="main-layout" id="catalogo">
-        <!-- Sidebar de Filtros -->
-        <aside class="filter-sidebar">
-            <div class="filter-title">
-                Filtros Inteligentes
-            </div>
-
-            <div class="filter-group">
-                <h4>Filtrar por Marca</h4>
-                <ul class="filter-list">
-                    <li class="filter-item"><input type="checkbox" checked> Toyota</li>
-                    <li class="filter-item"><input type="checkbox"> Renault</li>
-                    <li class="filter-item"><input type="checkbox"> Kia</li>
-                    <li class="filter-item"><input type="checkbox"> Mitsubishi</li>
-                    <li class="filter-item"><input type="checkbox"> Ford</li>
-                    <li class="filter-item"><input type="checkbox"> Suzuki</li>
-                </ul>
-            </div>
-
-            <div class="filter-group">
-                <h4>Categorias de Peças</h4>
-                <ul class="filter-list">
-                    <li class="filter-item"><input type="checkbox"> Motores & Componentes</li>
-                    <li class="filter-item"><input type="checkbox"> Sistema de Travões / Freios</li>
-                    <li class="filter-item"><input type="checkbox"> Filtros & Manutenção</li>
-                    <li class="filter-item"><input type="checkbox"> Suspensão & Direção</li>
-                    <li class="filter-item"><input type="checkbox"> Sistema Elétrico & Alternadores</li>
-                </ul>
-            </div>
-
-            <div class="filter-group">
-                <h4>Faixa de Preço (Kz)</h4>
-                <div class="price-range">
-                    <div class="price-inputs">
-                        <input type="text" placeholder="Mínimo">
-                        <span>-</span>
-                        <input type="text" placeholder="Máximo">
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Grid de Peças / Produtos -->
-        <main class="catalog-content">
-            <div class="catalog-header">
-                <div class="catalog-title">
-                    <h2>Catálogo de Peças Automotivas</h2>
-                </div>
-                <div class="search-box">
-                    <input type="text" placeholder="Buscar por peça, modelo ou código...">
-                </div>
-            </div>
-
-            <div class="product-grid">
-                <!-- Produto 1 -->
-                <div class="product-card">
-                    <span class="product-badge">Genuína</span>
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Kit de Embraiagem" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-brand">Toyota / Hilux & Fortuner</span>
-                        <h3 class="product-title">Kit de Embraiagem Completo Genuíno</h3>
-                        <p class="product-desc">Alta durabilidade para motores a diesel e gasolina. Garantia de fábrica.</p>
-                        <div class="product-bottom">
-                            <div class="product-price">Sob Consulta</div>
-                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20do%20Kit%20de%20Embraiagem%20Toyota" target="_blank" class="btn-add-wa">
-                                🛒 Pedir via WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 2 -->
-                <div class="product-card">
-                    <span class="product-badge">Genuína</span>
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1600706432520-218080004f5e?auto=format&fit=crop&w=600&q=80" alt="Filtro de Óleo e Ar" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-brand">Mitsubishi / Pajero & L200</span>
-                        <h3 class="product-title">Filtros de Óleo & Ar de Alta Eficiência</h3>
-                        <p class="product-desc">Proteção máxima contra impurezas para a vida útil do motor.</p>
-                        <div class="product-bottom">
-                            <div class="product-price">Sob Consulta</div>
-                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20dos%20Filtros%20Mitsubishi" target="_blank" class="btn-add-wa">
-                                🛒 Pedir via WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 3 -->
-                <div class="product-card">
-                    <span class="product-badge">Genuína</span>
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Pastilhas de Travão" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-brand">Kia & Hyundai</span>
-                        <h3 class="product-title">Jogo de Pastilhas de Travão / Freio</h3>
-                        <p class="product-desc">Excelente frenagem e resistência a altas temperaturas.</p>
-                        <div class="product-bottom">
-                            <div class="product-price">Sob Consulta</div>
-                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20das%20Pastilhas%20de%20Freio%20Kia" target="_blank" class="btn-add-wa">
-                                🛒 Pedir via WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Produto 4 -->
-                <div class="product-card">
-                    <span class="product-badge">Genuína</span>
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80" alt="Alternador Automotivo" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-brand">Ford & Chevrolet</span>
-                        <h3 class="product-title">Alternador Automotivo 12V High Output</h3>
-                        <p class="product-desc">Componente elétrico original para estabilidade da bateria.</p>
-                        <div class="product-bottom">
-                            <div class="product-price">Sob Consulta</div>
-                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20do%20Alternador%20Ford/Chevrolet" target="_blank" class="btn-add-wa">
-                                🛒 Pedir via WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
     </div>
 
-    <!-- Seção de Garantia & Serviços -->
-    <section class="about-section" id="servicos">
-        <div class="about-container">
-            <div class="about-card">
-                <h3>🛠️ Peças Genuínas Garantidas</h3>
-                <p>Trabalhamos exclusivamente com componentes autênticos das principais fabricantes mundiais para manter a integridade do seu veículo.</p>
+    <!-- Módulo do Catálogo -->
+    <main class="catalog-section" id="catalogo">
+        <div class="filter-toolbar">
+            <div class="search-field-wrap">
+                <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar por peça, código OEM ou modelo..." onkeyup="handleSearch()">
             </div>
-            <div class="about-card">
-                <h3>📄 Emissão de Factura Proforma</h3>
-                <p>Fornecemos orçamentos e Facturas Proforma oficiais com NIF registrado para empresas e particulares em Angola.</p>
-            </div>
-            <div class="about-card">
-                <h3>🚚 Atendimento & Entregas em Luanda</h3>
-                <p>Atendimento ágil localizado na Rua Machado Saldanha, Bairro Neves Bendinha, com opção de envio direto para a sua oficina.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Rodapé Completo com Credenciais -->
-    <footer id="contacto">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>BIAFRANA COMÉRCIO GERAL</h4>
-                <p>Venda de todo tipo de peças genuínas de automóveis e prestação de serviços especializados.</p>
-                <p style="margin-top: 1rem; color: var(--dourado);"><strong>Licenciamento:</strong> 2025-2027-AGT-400</p>
-            </div>
-            <div class="footer-col">
-                <h4>Contactos Telefónicos</h4>
-                <p>📞 +244 938 760 385</p>
-                <p>📞 +244 935 505 806</p>
-                <p>💬 +244 957 278 686 (Proforma Directa)</p>
-            </div>
-            <div class="footer-col">
-                <h4>Localização</h4>
-                <p>📍 Rua Machado Saldanha</p>
-                <p>Bairro Neves Bendinha</p>
-                <p>Luanda - Angola</p>
-            </div>
-            <div class="footer-col">
-                <h4>Dados Fiscais (NIF)</h4>
-                <p>NIF Empresa: 5000738166</p>
-                <p>NIF Emissor: 5000759058</p>
-                <p>Isenção CIVA nos termos da alínea d) do nº1 do artigo 12 do CIVA Factura.</p>
+            <div class="categories-scroll">
+                <button class="cat-btn active" onclick="filterCategory('all', this)">Todas as Marcas</button>
+                <button class="cat-btn" onclick="filterCategory('Toyota', this)">Toyota</button>
+                <button class="cat-btn" onclick="filterCategory('Mitsubishi', this)">Mitsubishi</button>
+                <button class="cat-btn" onclick="filterCategory('Hyundai', this)">Hyundai / Kia</button>
+                <button class="cat-btn" onclick="filterCategory('Ford', this)">Ford</button>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div>&copy; 2026 Biafrana Comércio Geral e Prestação de Serviços. Todos os direitos reservados.</div>
-            <div>Desenvolvido para WooCommerce & Web Premium</div>
-        </div>
-    </footer>
 
+        <!-- Grid de Produtos -->
+        <div class="product-grid" id="productGrid"></div>
+    </main>
+
+    <!-- Overlay Backdrop -->
+    <div id="drawerBackdrop" class="overlay-backdrop" onclick="closeDrawers()"></div>
+
+    <!-- Drawer Carrinho -->
+    <aside id="cartDrawer" class="side-drawer">
+        <div class="drawer-head">
+            <span class="drawer-title">Solicitação de Cotação</span>
+            <button class="action-icon-btn" onclick="closeDrawers()">✕</button>
+        </div>
+        <div class="drawer-body" id="cartContent"></div>
+        <div class="drawer-foot">
+            <div class="summary-row">
+                <span>Subtotal (Kz)</span>
+                <span id="subtotalValue">0 Kz</span>
+            </div>
+            <div class="summary-row">
+                <span>Imposto (IVA 14%)</span>
+                <span id="taxValue">0 Kz</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total Estimado</span>
+                <span id="totalValue" style="color: var(--gold-primary);">0 Kz</span>
+            </div>
+            <button class="btn-primary-gold" style="width: 100%; margin-top: 1.25rem; justify-content: center; background: var(--whatsapp-green); color: white;" onclick="sendWhatsAppOrder()">
+                Enviar Pedido via WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- Thumb-Zone Mobile Navigation -->
+    <nav class="bottom-nav-bar">
+        <a href="#" class="nav-item-btn active">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <span>Início</span>
+        </a>
+        <a href="#catalogo" class="nav-item-btn">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <span>Catálogo</span>
+        </a>
+        <button class="nav-item-btn" onclick="toggleDrawer('cartDrawer')">
+            <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <span>Carrinho</span>
+        </button>
+        <a href="https://wa.me/244938760385" target="_blank" class="nav-item-btn">
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+            <span>Contacto</span>
+        </a>
+    </nav>
+
+    <script>
+        const inventory = [
+            { id: 101, title: "Kit de Embraiagem Completo", brand: "Toyota", sku: "TY-31250-E02", price: 185000, category: "Genuíno OEM", image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" },
+            { id: 102, title: "Filtro de Combustível Hilux/Prado", brand: "Toyota", sku: "TY-23390-0L070", price: 38000, category: "Genuíno OEM", image: "https://images.unsplash.com/photo-1600706432520-218080004f5e?auto=format&fit=crop&w=600&q=80" },
+            { id: 103, title: "Pastilhas de Travão Dianteira L200", brand: "Mitsubishi", sku: "MZ-4605A502", price: 46000, category: "Genuíno OEM", image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" },
+            { id: 104, title: "Alternador Heavy-Duty 12V 130A", brand: "Ford", sku: "FD-AB39-10300-AE", price: 145000, category: "Genuíno OEM", image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80" },
+            { id: 105, title: "Kit Amortecedores Traseiros Santa Fe", brand: "Hyundai", sku: "HY-55311-2W000", price: 92000, category: "Genuíno OEM", image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80" }
+        ];
+
+        let cartState = [];
+        let activeCategory = 'all';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCatalog(inventory);
+        });
+
+        function renderCatalog(items) {
+            const grid = document.getElementById('productGrid');
+            if(items.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-tertiary);">Nenhum componente encontrado para esta consulta.</div>`;
+                return;
+            }
+
+            grid.innerHTML = items.map(item => `
+                <article class="product-card">
+                    <span class="card-badge">${item.category}</span>
+                    <div class="card-media">
+                        <img src="${item.image}" alt="${item.title}" class="card-img" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-brand">${item.brand}</span>
+                            <span class="card-sku">${item.sku}</span>
+                        </div>
+                        <h3 class="card-title">${item.title}</h3>
+                        <div class="card-price-row">
+                            <div>
+                                <div class="price-label">Preço Unitário</div>
+                                <div class="price-value">${item.price.toLocaleString('pt-AO')} Kz</div>
+                            </div>
+                        </div>
+                        <button class="btn-add-whatsapp" onclick="addToCart(${item.id})">
+                            Adicionar à Cotação
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function addToCart(id) {
+            const product = inventory.find(p => p.id === id);
+            const existing = cartState.find(item => item.id === id);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cartState.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            triggerToast();
+        }
+
+        function updateCartUI() {
+            const counter = document.getElementById('cartCounter');
+            const totalItems = cartState.reduce((sum, item) => sum + item.qty, 0);
+            counter.textContent = totalItems;
+
+            const cartContainer = document.getElementById('cartContent');
+            if (cartState.length === 0) {
+                cartContainer.innerHTML = `<p style="text-align: center; color: var(--text-tertiary); margin-top: 2rem;">O seu carrinho de cotação está vazio.</p>`;
+            } else {
+                cartContainer.innerHTML = cartState.map(item => `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle);">
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.88rem;">${item.title}</div>
+                            <div style="font-size: 0.75rem; color: var(--gold-primary);">${item.qty}x ${item.price.toLocaleString('pt-AO')} Kz</div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <button class="action-icon-btn" style="width:28px; height:28px;" onclick="updateQty(${item.id}, -1)">-</button>
+                            <span style="font-size:0.85rem; font-weight:700;">${item.qty}</span>
+                            <button class="action-icon-btn" style="width:28px; height:28px;" onclick="updateQty(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const subtotal = cartState.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const tax = subtotal * 0.14;
+            const total = subtotal + tax;
+
+            document.getElementById('subtotalValue').textContent = `${subtotal.toLocaleString('pt-AO')} Kz`;
+            document.getElementById('taxValue').textContent = `${tax.toLocaleString('pt-AO')} Kz`;
+            document.getElementById('totalValue').textContent = `${total.toLocaleString('pt-AO')} Kz`;
+        }
+
+        function updateQty(id, delta) {
+            const item = cartState.find(p => p.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cartState = cartState.filter(p => p.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function toggleDrawer(id) {
+            document.getElementById(id).classList.add('active');
+            document.getElementById('drawerBackdrop').classList.add('active');
+        }
+
+        function closeDrawers() {
+            document.querySelectorAll('.side-drawer').forEach(d => d.classList.remove('active'));
+            document.getElementById('drawerBackdrop').classList.remove('active');
+        }
+
+        function toggleTheme() {
+            const root = document.documentElement;
+            const current = root.getAttribute('data-theme');
+            root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+        }
+
+        function triggerToast() {
+            const toast = document.getElementById('toastNotification');
+            toast.classList.add('visible');
+            setTimeout(() => toast.classList.remove('visible'), 2200);
+        }
+
+        function filterCategory(cat, btn) {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCategory = cat;
+            applyFilters();
+        }
+
+        function handleSearch() {
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = inventory.filter(item => {
+                const matchesCat = activeCategory === 'all' || item.brand.toLowerCase() === activeCategory.toLowerCase();
+                const matchesQuery = item.title.toLowerCase().includes(query) || item.sku.toLowerCase().includes(query);
+                return matchesCat && matchesQuery;
+            });
+            renderCatalog(filtered);
+        }
+
+        function sendWhatsAppOrder() {
+            if (cartState.length === 0) return;
+            let message = `*SOLICITAÇÃO DE COTAÇÃO — BIAFRANA COMÉRCIO*\n\n`;
+            cartState.forEach(item => {
+                message += `• *${item.qty}x* ${item.title} (SKU: ${item.sku})\n  Valor: ${(item.price * item.qty).toLocaleString('pt-AO')} Kz\n\n`;
+            });
+            const total = cartState.reduce((sum, item) => sum + (item.price * item.qty), 0) * 1.14;
+            message += `*Total Geral (com IVA 14%):* ${total.toLocaleString('pt-AO')} Kz\n\n_Aguardando emissão da Proforma._`;
+            
+            window.open(`https://wa.me/244938760385?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
 </body>
 </html>
