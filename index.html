@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biafrana Comércio Geral - Peças Genuínas de Automóveis em Luanda</title>
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-profundo: #0B2545;
+            --azul-escuro-bg: #07192E;
+            --dourado: #D4AF37;
+            --dourado-hover: #B59226;
+            --cinza-antracite: #1F2421;
+            --cinza-card: #161B22;
+            --cinza-borda: #2D3748;
+            --cinza-texto: #A0AEC0;
+            --branco: #FFFFFF;
+            --verde-whatsapp: #25D366;
+            --fonte-principal: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--fonte-principal);
+            background-color: var(--cinza-antracite);
+            color: var(--branco);
+            line-height: 1.5;
+        }
+
+        /* Top Bar de Informações Institucionais */
+        .top-bar {
+            background-color: #051322;
+            padding: 0.5rem 2rem;
+            font-size: 0.82rem;
+            color: var(--cinza-texto);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .top-bar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .top-info {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .top-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nif-badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--dourado);
+            padding: 0.1rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: var(--azul-profundo);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid var(--dourado);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            color: var(--dourado);
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.72rem;
+            color: #CBD5E0;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dourado);
+        }
+
+        .btn-header-wa {
+            background-color: var(--verde-whatsapp);
+            color: var(--branco);
+            padding: 0.55rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-header-wa:hover {
+            background-color: #1eb956;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, rgba(7, 25, 46, 0.95) 0%, rgba(11, 37, 69, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1600&q=80') center/cover;
+            padding: 4.5rem 2rem;
+            border-bottom: 1px solid var(--cinza-borda);
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--dourado);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: var(--branco);
+        }
+
+        .hero-content h1 span {
+            color: var(--dourado);
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--cinza-texto);
+            margin-bottom: 2rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-dourado {
+            background-color: var(--dourado);
+            color: var(--azul-escuro-bg);
+            padding: 0.85rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-dourado:hover {
+            background-color: var(--dourado-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--dourado);
+            color: var(--dourado);
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--branco);
+        }
+
+        /* Banner de Marcas Automotivas Atendidas */
+        .brands-bar {
+            background-color: var(--azul-escuro-bg);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--cinza-borda);
+        }
+
+        .brands-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .brands-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--dourado);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .brands-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .brand-badge {
+            background: #0E223B;
+            border: 1px solid var(--cinza-borda);
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--branco);
+            letter-spacing: 0.5px;
+            transition: border-color 0.3s;
+        }
+
+        .brand-badge:hover {
+            border-color: var(--dourado);
+            color: var(--dourado);
+        }
+
+        /* Layout Principal do Catálogo */
+        .main-layout {
+            max-width: 1280px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        /* Filtros Inteligentes Lateral */
+        .filter-sidebar {
+            background-color: var(--cinza-card);
+            border: 1px solid var(--cinza-borda);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .filter-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dourado);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--cinza-borda);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .filter-group h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--branco);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: var(--cinza-texto);
+            cursor: pointer;
+        }
+
+        .filter-item input[type="checkbox"] {
+            accent-color: var(--dourado);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .filter-item:hover {
+            color: var(--dourado);
+        }
+
+        .price-range {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .price-inputs {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .price-inputs input {
+            width: 100%;
+            background: #0B0E14;
+            border: 1px solid var(--cinza-borda);
+            color: var(--branco);
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Grid de Produtos */
+        .catalog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .catalog-title h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--branco);
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background-color: var(--cinza-card);
+            border: 1px solid var(--cinza-borda);
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            color: var(--branco);
+            font-size: 0.88rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--dourado);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background-color: var(--cinza-card);
+            border: 1px solid var(--cinza-borda);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--dourado);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--azul-profundo);
+            color: var(--dourado);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            border: 1px solid var(--dourado);
+            z-index: 2;
+        }
+
+        .product-image-wrap {
+            width: 100%;
+            height: 200px;
+            background-color: #0D1117;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-brand {
+            font-size: 0.75rem;
+            color: var(--dourado);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--branco);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-desc {
+            font-size: 0.8rem;
+            color: var(--cinza-texto);
+            margin-bottom: 1rem;
+        }
+
+        .product-bottom {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--branco);
+            margin-bottom: 0.8rem;
+        }
+
+        .btn-add-wa {
+            width: 100%;
+            background-color: var(--verde-whatsapp);
+            color: var(--branco);
+            padding: 0.65rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-add-wa:hover {
+            background-color: #128C7E;
+        }
+
+        /* Seção Sobre / Garantia */
+        .about-section {
+            background-color: var(--azul-escuro-bg);
+            border-top: 1px solid var(--cinza-borda);
+            border-bottom: 1px solid var(--cinza-borda);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .about-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .about-card {
+            background: var(--cinza-card);
+            border: 1px solid var(--cinza-borda);
+            padding: 1.8rem;
+            border-radius: 8px;
+        }
+
+        .about-card h3 {
+            color: var(--dourado);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-card p {
+            color: var(--cinza-texto);
+            font-size: 0.9rem;
+        }
+
+        /* Rodapé Institucional */
+        footer {
+            background-color: #05101D;
+            color: var(--branco);
+            padding: 3.5rem 2rem 1.5rem;
+            border-top: 3px solid var(--dourado);
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-col h4 {
+            color: var(--dourado);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col a {
+            color: var(--cinza-texto);
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--dourado);
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--cinza-borda);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.82rem;
+            color: #718096;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .filter-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .top-bar-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar Institucional com Dados Oficiais de Luanda -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-info">
+                <span>📍 Rua Machado Saldanha, Bairro Neves Bendinha, Luanda - Angola</span>
+                <span>📞 +244 938 760 385 / 935 505 806</span>
+            </div>
+            <div class="top-info">
+                <span class="nif-badge">NIF: 5000738166 / 5000759058</span>
+                <span>LICENCIAMENTO: 2025-2027-AGT-400</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cabeçalho Principal -->
+    <header>
+        <nav>
+            <div class="brand-container">
+                <a href="#" class="logo">BIAFRANA</a>
+                <span class="logo-subtitle">Comércio Geral & Prestação de Serviços</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#catalogo">Peças Genuínas</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/244938760385?text=Olá%20Biafrana%20Comércio%20Geral,%20gostaria%20de%20consultar%20uma%20peça." target="_blank" class="btn-header-wa">
+                💬 WhatsApp Directo
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">Especialistas Automotivos em Luanda</span>
+                <h1>Venda de <span>Peças Genuínas</span> para Automóveis</h1>
+                <p>Componentes originais com garantia de desempenho para Toyota, Renault, Kia, Chevrolet, Mitsubishi, Ford, Suzuki e muito mais.</p>
+                <div class="hero-ctas">
+                    <a href="#catalogo" class="btn-dourado">Ver Catálogo de Peças</a>
+                    <a href="https://wa.me/244938760385?text=Gostaria%20de%20pedir%20uma%20Factura%20Proforma" target="_blank" class="btn-outline">Solicitar Proforma</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas de Veículos Atendidas -->
+    <section class="brands-bar">
+        <div class="brands-container">
+            <div class="brands-title">Marcas Com Peças em Estoque Disponível</div>
+            <div class="brands-grid">
+                <div class="brand-badge">TOYOTA</div>
+                <div class="brand-badge">RENAULT</div>
+                <div class="brand-badge">KIA</div>
+                <div class="brand-badge">CHEVROLET</div>
+                <div class="brand-badge">MITSUBISHI</div>
+                <div class="brand-badge">FORD</div>
+                <div class="brand-badge">SUZUKI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo e Filtros Inteligentes -->
+    <div class="main-layout" id="catalogo">
+        <!-- Sidebar de Filtros -->
+        <aside class="filter-sidebar">
+            <div class="filter-title">
+                Filtros Inteligentes
+            </div>
+
+            <div class="filter-group">
+                <h4>Filtrar por Marca</h4>
+                <ul class="filter-list">
+                    <li class="filter-item"><input type="checkbox" checked> Toyota</li>
+                    <li class="filter-item"><input type="checkbox"> Renault</li>
+                    <li class="filter-item"><input type="checkbox"> Kia</li>
+                    <li class="filter-item"><input type="checkbox"> Mitsubishi</li>
+                    <li class="filter-item"><input type="checkbox"> Ford</li>
+                    <li class="filter-item"><input type="checkbox"> Suzuki</li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h4>Categorias de Peças</h4>
+                <ul class="filter-list">
+                    <li class="filter-item"><input type="checkbox"> Motores & Componentes</li>
+                    <li class="filter-item"><input type="checkbox"> Sistema de Travões / Freios</li>
+                    <li class="filter-item"><input type="checkbox"> Filtros & Manutenção</li>
+                    <li class="filter-item"><input type="checkbox"> Suspensão & Direção</li>
+                    <li class="filter-item"><input type="checkbox"> Sistema Elétrico & Alternadores</li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h4>Faixa de Preço (Kz)</h4>
+                <div class="price-range">
+                    <div class="price-inputs">
+                        <input type="text" placeholder="Mínimo">
+                        <span>-</span>
+                        <input type="text" placeholder="Máximo">
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Grid de Peças / Produtos -->
+        <main class="catalog-content">
+            <div class="catalog-header">
+                <div class="catalog-title">
+                    <h2>Catálogo de Peças Automotivas</h2>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar por peça, modelo ou código...">
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <span class="product-badge">Genuína</span>
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Kit de Embraiagem" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Toyota / Hilux & Fortuner</span>
+                        <h3 class="product-title">Kit de Embraiagem Completo Genuíno</h3>
+                        <p class="product-desc">Alta durabilidade para motores a diesel e gasolina. Garantia de fábrica.</p>
+                        <div class="product-bottom">
+                            <div class="product-price">Sob Consulta</div>
+                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20do%20Kit%20de%20Embraiagem%20Toyota" target="_blank" class="btn-add-wa">
+                                🛒 Pedir via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <span class="product-badge">Genuína</span>
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1600706432520-218080004f5e?auto=format&fit=crop&w=600&q=80" alt="Filtro de Óleo e Ar" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Mitsubishi / Pajero & L200</span>
+                        <h3 class="product-title">Filtros de Óleo & Ar de Alta Eficiência</h3>
+                        <p class="product-desc">Proteção máxima contra impurezas para a vida útil do motor.</p>
+                        <div class="product-bottom">
+                            <div class="product-price">Sob Consulta</div>
+                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20dos%20Filtros%20Mitsubishi" target="_blank" class="btn-add-wa">
+                                🛒 Pedir via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <span class="product-badge">Genuína</span>
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Pastilhas de Travão" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Kia & Hyundai</span>
+                        <h3 class="product-title">Jogo de Pastilhas de Travão / Freio</h3>
+                        <p class="product-desc">Excelente frenagem e resistência a altas temperaturas.</p>
+                        <div class="product-bottom">
+                            <div class="product-price">Sob Consulta</div>
+                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20das%20Pastilhas%20de%20Freio%20Kia" target="_blank" class="btn-add-wa">
+                                🛒 Pedir via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <span class="product-badge">Genuína</span>
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=600&q=80" alt="Alternador Automotivo" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Ford & Chevrolet</span>
+                        <h3 class="product-title">Alternador Automotivo 12V High Output</h3>
+                        <p class="product-desc">Componente elétrico original para estabilidade da bateria.</p>
+                        <div class="product-bottom">
+                            <div class="product-price">Sob Consulta</div>
+                            <a href="https://wa.me/244938760385?text=Olá,%20gostaria%20de%20saber%20o%20preço%20do%20Alternador%20Ford/Chevrolet" target="_blank" class="btn-add-wa">
+                                🛒 Pedir via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Seção de Garantia & Serviços -->
+    <section class="about-section" id="servicos">
+        <div class="about-container">
+            <div class="about-card">
+                <h3>🛠️ Peças Genuínas Garantidas</h3>
+                <p>Trabalhamos exclusivamente com componentes autênticos das principais fabricantes mundiais para manter a integridade do seu veículo.</p>
+            </div>
+            <div class="about-card">
+                <h3>📄 Emissão de Factura Proforma</h3>
+                <p>Fornecemos orçamentos e Facturas Proforma oficiais com NIF registrado para empresas e particulares em Angola.</p>
+            </div>
+            <div class="about-card">
+                <h3>🚚 Atendimento & Entregas em Luanda</h3>
+                <p>Atendimento ágil localizado na Rua Machado Saldanha, Bairro Neves Bendinha, com opção de envio direto para a sua oficina.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Completo com Credenciais -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>BIAFRANA COMÉRCIO GERAL</h4>
+                <p>Venda de todo tipo de peças genuínas de automóveis e prestação de serviços especializados.</p>
+                <p style="margin-top: 1rem; color: var(--dourado);"><strong>Licenciamento:</strong> 2025-2027-AGT-400</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contactos Telefónicos</h4>
+                <p>📞 +244 938 760 385</p>
+                <p>📞 +244 935 505 806</p>
+                <p>💬 +244 957 278 686 (Proforma Directa)</p>
+            </div>
+            <div class="footer-col">
+                <h4>Localização</h4>
+                <p>📍 Rua Machado Saldanha</p>
+                <p>Bairro Neves Bendinha</p>
+                <p>Luanda - Angola</p>
+            </div>
+            <div class="footer-col">
+                <h4>Dados Fiscais (NIF)</h4>
+                <p>NIF Empresa: 5000738166</p>
+                <p>NIF Emissor: 5000759058</p>
+                <p>Isenção CIVA nos termos da alínea d) do nº1 do artigo 12 do CIVA Factura.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Biafrana Comércio Geral e Prestação de Serviços. Todos os direitos reservados.</div>
+            <div>Desenvolvido para WooCommerce & Web Premium</div>
+        </div>
+    </footer>
+
+</body>
+</html>
